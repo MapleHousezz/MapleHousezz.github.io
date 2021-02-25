@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-02-25T08:07:35.845Z</updated>
+    <updated>2021-02-25T11:15:25.514Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://MapleHousezz.github.io/images/avatar.png</logo>
     <icon>https://MapleHousezz.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, study and learn</rights>
+    <entry>
+        <title type="html"><![CDATA[01.py]]></title>
+        <id>https://MapleHousezz.github.io/01py/</id>
+        <link href="https://MapleHousezz.github.io/01py/">
+        </link>
+        <updated>2021-02-25T11:13:55.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[简记]]></title>
         <id>https://MapleHousezz.github.io/jian-ji/</id>
