@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-02-26T09:29:48.164Z</updated>
+    <updated>2021-02-26T09:45:33.717Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -16,26 +16,6 @@
         <link href="https://MapleHousezz.github.io/-2Vre4_L5/">
         </link>
         <updated>2021-02-26T09:23:26.000Z</updated>
-        <summary type="html"><![CDATA[<p>&quot;&quot;&quot;缩进是python的灵魂&quot;&quot;&quot;<br>
-money=int(input('取多少钱？'))<br>
-all=1999<br>
-af=all-money<br>
-if money&lt;=all:<br>
-print(&quot;取款金额%d&quot;%money,&quot;余额%d&quot;%af)<br>
-else:<br>
-print(&quot;当前余额不足，快去赚钱吧&quot;)<br>
-print(&quot;取款结束，请去取出卡片&quot;)</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>&quot;&quot;&quot;缩进是python的灵魂&quot;&quot;&quot;<br>
-money=int(input('取多少钱？'))<br>
-all=1999<br>
-af=all-money<br>
-if money&lt;=all:<br>
-print(&quot;取款金额%d&quot;%money,&quot;余额%d&quot;%af)<br>
-else:<br>
-print(&quot;当前余额不足，快去赚钱吧&quot;)<br>
-print(&quot;取款结束，请去取出卡片&quot;)</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[常用检索语法]]></title>
