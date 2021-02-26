@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>03.py选择结构 | study and learn</title>
+<title>爬虫第1课：发送与读取请求 | study and learn</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -19,11 +19,9 @@
 
 
     <meta name="description" content="
-&quot;&quot;&quot;缩进是python的灵魂&quot;&quot;&quot;
-money=int(input('取多少钱？'))
-all=1999
-af=all-money
-if money&lt;=all:
+import urllib.request,urllib.error 导入库
+获取一个get请求
+response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
 prin..." />
     <meta name="keywords" content="python" />
   </head>
@@ -96,34 +94,52 @@ prin..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">03.py选择结构</h2>
+            <h2 class="post-title">爬虫第1课：发送与读取请求</h2>
             <div class="post-date">2-26-21</div>
             
             <div class="post-content" v-pre>
               <!-- more -->
-<p>&quot;&quot;&quot;缩进是python的灵魂&quot;&quot;&quot;<br>
-money=int(input('取多少钱？'))<br>
-all=1999<br>
-af=all-money<br>
-if money&lt;=all:<br>
-print(&quot;取款金额%d&quot;%money,&quot;余额%d&quot;%af)<br>
-else:<br>
-print(&quot;当前余额不足，快去赚钱吧&quot;)<br>
-print(&quot;取款结束，请去取出卡片&quot;)</p>
+<p>import urllib.request,urllib.error 导入库<br>
+获取一个get请求<br>
+response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)<br>
+print(response.read().decode(&quot;utf-8&quot;))#封装之后读取，再解码。</p>
 <!-- more -->
-<p>score=int(input(&quot;请输入分数&quot;))<br>
-if score&gt;=90 and score&lt;100:<br>
-print(&quot;A&quot;)<br>
-elif score&gt;=80 and score&lt;90:<br>
-print(&quot;B&quot;)<br>
-elif score&gt;=70 and score&lt;80:<br>
-print(&quot;C&quot;)<br>
-elif score&gt;=60 and score&lt;70:<br>
-print(&quot;D&quot;)<br>
-elif 0&lt;=score&lt;60:<br>
-print(&quot;E&quot;)<br>
-else:<br>
-print(&quot;输入有误，请重新输入&quot;)</p>
+<p>获取一个post请求,需要提交数据表单<br>
+import urllib.parse<br>
+data = bytes(urllib.parse.urlencode({&quot;hello&quot;:&quot;world&quot;,&quot;1&quot;:&quot;2&quot;}),encoding=&quot;utf-8&quot;)#这里是处理附加的表单信息<br>
+response2=urllib.request.urlopen(&quot;http://httpbin.org/post&quot;,data=data)                                                                    用data存入数据<br>
+print(response2.read().decode(&quot;utf-8&quot;))</p>
+<!-- more -->
+<p>超时处理<br>
+try:<br>
+response=urllib.request.urlopen(&quot;http://httpbin.org/get&quot;,timeout=0.01)<br>
+print(response.read().decode(&quot;utf-8&quot;))<br>
+except urllib.error.URLError as e:<br>
+print(&quot;time out&quot;)</p>
+<!-- more -->
+<pre><code>    response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
+    print(response.status)#状态码，418是被发现了
+    print(response.getheaders())#响应头getheaders 要加s除非爬取单个
+    print(response.getheader(&quot;Server&quot;))#提取相应键值对
+</code></pre>
+<!-- more -->
+<pre><code>        url=&quot;http://httpbin.org/post&quot;
+        headers={
+            &quot;User-Agent&quot;: &quot;Mozilla/6.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0&quot;
+        }
+        data=bytes(urllib.parse.urlencode({&quot;name&quot;:&quot;eric&quot;}),encoding=&quot;utf-8&quot;)
+        req=urllib.request.Request(url=url,headers=headers,data=data,method=&quot;POST&quot;)
+        response=urllib.request.urlopen(req)
+        print(response.read().decode(&quot;utf-8&quot;))
+</code></pre>
+<!-- more -->
+<pre><code>url=&quot;http://www.douban.com&quot;
+    headers={
+        &quot;User-Agent&quot;: &quot;Mozilla/6.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0&quot;
+    }
+req=urllib.request.Request(url=url,headers=headers)
+response=urllib.request.urlopen(req)
+print(response.read().decode(&quot;utf-8&quot;))</code></pre>
 
             </div>
             
@@ -138,9 +154,9 @@ print(&quot;输入有误，请重新输入&quot;)</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://MapleHousezz.github.io/chang-yong-jian-suo-yu-fa/">
+                <a href="https://MapleHousezz.github.io/-2Vre4_L5/">
                   <h3 class="post-title">
-                    常用检索语法
+                    03.py选择结构
                   </h3>
                 </a>
               </div>
