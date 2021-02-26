@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://MapleHousezz.github.io/favicon.ico?v=1614349442277">
+<link rel="shortcut icon" href="https://MapleHousezz.github.io/favicon.ico?v=1614352621573">
 <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css">
 
 
@@ -19,10 +19,9 @@
 
 
     <meta name="description" content="
-import urllib.request,urllib.error 导入库
-获取一个get请求
-response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
-prin..." />
+ import urllib.request,urllib.error 导入库
+    获取一个get请求
+                response=urllib.request.urlopen(&quot;http://www...." />
     <meta name="keywords" content="python" />
   </head>
   <body>
@@ -32,7 +31,7 @@ prin..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://MapleHousezz.github.io">
-        <img src="https://MapleHousezz.github.io/images/avatar.png?v=1614349442277" class="site-logo">
+        <img src="https://MapleHousezz.github.io/images/avatar.png?v=1614352621573" class="site-logo">
         <h1 class="site-title">study and learn</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -99,15 +98,16 @@ prin..." />
             
             <div class="post-content" v-pre>
               <!-- more -->
-<p>import urllib.request,urllib.error 导入库<br>
-获取一个get请求<br>
-response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)<br>
-print(response.read().decode(&quot;utf-8&quot;))#封装之后读取，再解码。</p>
+<pre><code> import urllib.request,urllib.error 导入库
+    获取一个get请求
+                response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
+                print(response.read().decode(&quot;utf-8&quot;))#封装之后读取，再解码。
+</code></pre>
 <!-- more -->
 <p>获取一个post请求,需要提交数据表单<br>
 import urllib.parse<br>
-data = bytes(urllib.parse.urlencode({&quot;hello&quot;:&quot;world&quot;,&quot;1&quot;:&quot;2&quot;}),encoding=&quot;utf-8&quot;)#这里是处理附加的表单信息<br>
-response2=urllib.request.urlopen(&quot;http://httpbin.org/post&quot;,data=data)                                                                    用data存入数据<br>
+data = bytes(urllib.parse.urlencode({&quot;hello&quot;:&quot;world&quot;,&quot;1&quot;:&quot;2&quot;})encoding=&quot;utf-8&quot;)#这里是处理附加的表单信息<br>
+response2=urllib.request.urlopen(&quot;http://httpbin.org/post&quot;,data=data)<br>
 print(response2.read().decode(&quot;utf-8&quot;))</p>
 <!-- more -->
 <p>超时处理<br>
