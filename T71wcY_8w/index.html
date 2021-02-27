@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>常用检索语法 | study and learn</title>
+  <title>04.py常用循环结构 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,29 +77,78 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>常用检索语法</a></h3>
+        <h3><a>04.py常用循环结构</a></h3>
        </div>
        <div class="post-content">
-        <p>1.完整关键词搜索—“关键词”<br>
-2.包含任一关键词搜索— A | B（竖线前后都有空格）<br>
-3.搜索同时包含多个关键词的内容—A +B（加号前有空格）<br>
-4.剔除A中包含B的内容—（A -B）<br>
-5.《A》—书名号，电视剧内容<br>
-6.标题内包含关键词—Intitle:A(intitle:A B)<br>
-7.搜索某种格式—关键词 filetype:文件格式<br>
-8.特定时间的内容—关键词 时间..时间<br>
-9.特定网站的内容—关键词 site:url<br>
-10.url中包含关键词的搜索—关键词 inurl:gov</p>
+        <!-- more -->
+<pre><code>    n = 10
+    sum = 0
+    counter = 1
+    while counter &lt;= n:
+    sum = sum + counter
+    counter += 1
+    print(&quot;1 到 %d 之和为: %d&quot; % (n,sum))
+
+    &lt;!-- more --&gt;
+    var = 1
+    while var == 1 :  # 表达式永远为 true
+    num = int(input(&quot;输入一个数字  :&quot;))
+    print (&quot;你输入的数字是: &quot;, num)
+    
+    print (&quot;Good bye!&quot;)
+</code></pre>
+<!-- more -->
+<pre><code>    flag = 1
+    
+    while (flag): print ('欢迎访问菜鸟教程!')
+    
+    print (&quot;Good bye!&quot;)
+</code></pre>
+<!-- more -->
+<pre><code>    sites = [&quot;Baidu&quot;, &quot;Google&quot;,&quot;Runoob&quot;,&quot;Taobao&quot;]
+    for site in sites:
+        if site == &quot;Runoob&quot;:
+            print(&quot;菜鸟教程!&quot;)
+            break
+        print(&quot;循环数据 &quot; + site)
+    else:
+        print(&quot;没有循环数据!&quot;)
+    print(&quot;完成循环!&quot;)
+    &lt;!-- more --&gt;
+    for i in range(-10, -100, -30) :
+        print(i)
+</code></pre>
+<!-- more -->
+<pre><code>    n = 5
+    while n &gt; 0:
+        n -= 1
+        if n == 2:
+            break
+        print(n)
+    print('循环结束。')
+</code></pre>
+<!-- more -->
+<pre><code>    注意例题：
+    for i in 'Runoob':
+        if i  == 'o':
+            pass
+            print('执行 pass 块')
+        print('当前字母 :', i)
+
+    print(&quot;Good bye!&quot;)
+
+    for可以遍历字符串里面的每一个字符
+</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-26-21</span>
+          <span class="date">2-27-21</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://MapleHousezz.github.io/notifition/" title="notifition">notifition </a>
+          <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
           
          </div>
         </div>
@@ -113,16 +162,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/chang-yong-jian-suo-yu-fa/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/T71wcY_8w/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/-2Vre4_L5/" title="03.py选择结构">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/02diary/" title=" 02.diary">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/8suZR5x-H/" title=" 03.diary">下一篇</a></li>
         
        </ul>
       </div>
