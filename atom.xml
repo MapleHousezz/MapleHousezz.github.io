@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-02-27T06:10:34.606Z</updated>
+    <updated>2021-02-27T06:11:31.128Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://MapleHousezz.github.io/images/avatar.png</logo>
     <icon>https://MapleHousezz.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, study and learn</rights>
+    <entry>
+        <title type="html"><![CDATA[03.diary]]></title>
+        <id>https://MapleHousezz.github.io/8suZR5x-H/</id>
+        <link href="https://MapleHousezz.github.io/8suZR5x-H/">
+        </link>
+        <updated>2021-02-27T06:10:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>继续学习，每天看一点。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>继续学习，每天看一点。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[爬虫第2课：内容搜索提取]]></title>
         <id>https://MapleHousezz.github.io/FmJrajC56/</id>
