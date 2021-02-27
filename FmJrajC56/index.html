@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>02.diary | study and learn</title>
+  <title>爬虫第2课：内容搜索提取 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,21 +77,63 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>02.diary</a></h3>
+        <h3><a>爬虫第2课：内容搜索提取</a></h3>
        </div>
        <div class="post-content">
-        <p>六级又没过，哈哈哈。和英语过不去。<br>
-好好学学python吧，</p>
+        <!-- more -->
+<pre><code>    from bs4 import BeautifulSoup
+    import re
+    file=open(&quot;C:/Users/MapleHousezz/Documents/Gridea/output/index.html&quot;,&quot;rb&quot;)
+    html=file.read().decode(&quot;utf-8&quot;)
+    bs=BeautifulSoup(html,&quot;html.parser&quot;)#解析上面的html,用parser方法
+
+    print(bs.title)
+    print(bs,a)
+    print(bs.head)
+    print(type(bs.head))
+
+    只能拿到拿到第一个内容
+    print(ba.title.string)#只要里面的内容
+    print(type(bs.title.string))#NavingableString字符串（标签里的内容）
+
+    print(ba.attrs)#快速拿到一个标签里面的所有属性
+    print(type(bs))#表示整个文档
+
+    print(bs.a.string)#拿到的是不被注释的内容
+    print(type(bs.a.string))#Coment特殊的字符串，输出的内容不包含被注释的字符串
+
+    文档的遍历
+    print(bs.head.contents)#特定属性获取特定内容
+    print(bs.head.contents[1])#第一个内容
+    还有更多的方法
+
+
+    文档的搜索
+    t_list=bs.find_all(&quot;a&quot;)#必须完全一致
+    print(t_list)
+</code></pre>
+<!-- more -->
+<pre><code>    正则表达式搜索：使用search()方法来匹配
+    t_list=bs.find_all(re.compile(&quot;a&quot;))
+    print(t_list)
+
+    用方法来搜索：传入一个函数，根据函数的要求来搜索
+    def name_is_exists(tag):
+        return tag.has_attr(&quot;name&quot;)#搜的tag标签里面要有name属性，也就是用函数缩小搜索范围。
+    t_list=bs.find_all(name_is_exists)
+    for item in t_list:
+        print(item)
+</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-26-21</span>
+          <span class="date">2-27-21</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://MapleHousezz.github.io/diary/" title="diary">diary </a>
+          <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
           
          </div>
         </div>
@@ -105,16 +147,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/02diary/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/FmJrajC56/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/chang-yong-jian-suo-yu-fa/" title="常用检索语法">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/02py-shu-ju-lei-xing/" title=" 02.py数据类型">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/4rtPCKjdK/" title=" 爬虫第1课：发送与读取请求">下一篇</a></li>
         
        </ul>
       </div>
