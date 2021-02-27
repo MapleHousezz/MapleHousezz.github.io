@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>01.py编码基础 | study and learn</title>
+  <title>05.py列表 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,29 +77,105 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>01.py编码基础</a></h3>
+        <h3><a>05.py列表</a></h3>
        </div>
        <div class="post-content">
-        <pre><code>    fp=open(&quot;D:/1.txt&quot;,&quot;a+&quot;)#如果有就直接追加，没有就先创建，输出到文件之中
-    print(&quot;hello world&quot;,file=fp)#“file=fp”才能达到目的
-    fp.close()
-    \r return
-    \n 换行
-    \b backspace
-    \t 水平制表符
-    8bit=1byte 8个位组成一个字节
-    1024byte=1KB
-    1024KB=1Mb
-    1024MB=1GB
-    1024GB=1TB
-    1024TB=1PB
-    01
-    ASCII
-    GB2312
-    GBK
-    GB18030
-    Unicode
-    utf-8
+        <!-- more -->
+<pre><code>    list1 = ['Google', 'Runoob', 1997, 2000]
+    list2 = [1, 2, 3, 4, 5 ]
+    list3 = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]
+    list4 = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+</code></pre>
+<!-- more -->
+<pre><code>    list = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+    print( list[0] )
+    print( list[1] )
+    print( list[2] )
+
+    以上实例输出结果：
+
+    red
+    green
+    blue
+</code></pre>
+<!-- more -->
+<pre><code>    list = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+    print( list[-1] )
+    print( list[-2] )
+    print( list[-3] )
+
+    以上实例输出结果：
+
+    black
+    white
+    yellow
+</code></pre>
+<!-- more -->
+<pre><code>    nums = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+    print(nums[0:4])
+
+    以上实例输出结果：
+
+    [10, 20, 30, 40]
+</code></pre>
+<!-- more -->
+<pre><code>    list = ['Google', 'Runoob', &quot;Zhihu&quot;, &quot;Taobao&quot;, &quot;Wiki&quot;]
+    
+    读取第二位
+    print (&quot;list[1]: &quot;, list[1])
+    从第二位开始（包含）截取到倒数第二位（不包含）
+    print (&quot;list[1:-2]: &quot;, list[1:-2])
+
+    以上实例输出结果：
+
+    list[1]:  Runoob
+    list[1:-2]:  ['Runoob', 'Zhihu']
+</code></pre>
+<!-- more -->
+<pre><code>    list = ['Google', 'Runoob', 1997, 2000]
+    
+    print (&quot;第三个元素为 : &quot;, list[2])
+    list[2] = 2001
+    print (&quot;更新后的第三个元素为 : &quot;, list[2])
+
+    注意：我们会在接下来的章节讨论append()方法的使用
+
+    以上实例输出结果：
+
+    第三个元素为 :  1997
+    更新后的第三个元素为 :  2001
+</code></pre>
+<!-- more -->
+<pre><code>    list = ['Google', 'Runoob', 1997, 2000]
+    
+    print (&quot;原始列表 : &quot;, list)
+    del list[2]
+    print (&quot;删除第三个元素 : &quot;, list)
+
+    以上实例输出结果：
+
+    原始列表 :  ['Google', 'Runoob', 1997, 2000]
+    删除第三个元素 :  ['Google', 'Runoob', 2000]
+</code></pre>
+<!-- more -->
+<pre><code>    列表还支持拼接操作：
+    &gt;&gt;&gt;squares = [1, 4, 9, 16, 25]
+    &gt;&gt;&gt; squares += [36, 49, 64, 81, 100]
+    &gt;&gt;&gt; squares
+    [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    &gt;&gt;&gt;
+    嵌套列表
+
+    使用嵌套列表即在列表里创建其它列表，例如：
+    &gt;&gt;&gt;a = ['a', 'b', 'c']
+    &gt;&gt;&gt; n = [1, 2, 3]
+    &gt;&gt;&gt; x = [a, n]
+    &gt;&gt;&gt; x
+    [['a', 'b', 'c'], [1, 2, 3]]
+    &gt;&gt;&gt; x[0]
+    ['a', 'b', 'c']
+    &gt;&gt;&gt; x[0][1]
+    'b'
 </code></pre>
 
        </div>
@@ -107,7 +183,7 @@
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-25-21</span>
+          <span class="date">2-27-21</span>
           <i class="fa fa-tag"></i>
           
           <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
@@ -124,16 +200,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/01py/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/mifuOo9kG/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/01diary/" title="01.diary">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/jian-ji/" title=" 简记">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/T71wcY_8w/" title=" 04.py常用循环结构">下一篇</a></li>
         
        </ul>
       </div>
