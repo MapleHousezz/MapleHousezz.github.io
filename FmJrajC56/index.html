@@ -13,7 +13,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://MapleHousezz.github.io/images/avatar.png?v=1614484078202" style="width:127px;" />
+     <img src="https://MapleHousezz.github.io/images/avatar.png?v=1614491402751" style="width:127px;" />
 
      <div class="description">
       <p>每个人需要一点小小的梦想</p>
@@ -124,6 +124,36 @@
     for item in t_list:
         print(item)
 </code></pre>
+<!-- more -->
+<pre><code>    用参数来找
+    t_list=bs.find_all(href=&quot;https://MapleHousezz.github.io/python/&quot;)
+    t_list=bs.find_all(id=&quot;head&quot;)
+    t_list=bs.find_all(class_=True)#有class及其子内容的显示
+
+    text参数，文本参数
+
+    t_list=bs.find_all(&quot;a&quot;)
+    t_list=bs.find_all(text=&quot;简记&quot;)
+    t_list=bs.find_all(text=re.compile(&quot;\d&quot;))#找到带数字的文本
+
+
+    limit参数，提取的个数
+    t_list=bs.find_all(&quot;a&quot;,limit=6)
+    for item in t_list:#列表列出
+        print(item)
+
+    css选择器
+    t_list=bs.select(&quot;title&quot;)
+    t_list=bs.select(&quot;.manv&quot;)#按照类名来查找class=manv(查找这个类名)
+    t_list=bs.select(&quot;#u1&quot;)#按照id来查找
+    t_list=bs.select(&quot;a[class='bri']&quot;)#通过属性来查找
+    t_list=bs.select(&quot;head&gt;title&gt;a&gt;href&quot;)#逐层访问
+    t_list=bs.select(&quot;.manv ~ .bri&quot;)#兄弟标签的查找
+    print(t_list[0].get_text())
+    for item in t_list:
+        print(item)
+</code></pre>
+<!-- more -->
 
        </div>
        <div class="post-footer">
