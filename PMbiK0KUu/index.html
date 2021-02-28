@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>04.py常用循环结构 | study and learn</title>
+  <title>08.py循环例题 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,18 +77,19 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>04.py常用循环结构</a></h3>
+        <h3><a>08.py循环例题</a></h3>
        </div>
        <div class="post-content">
         <!-- more -->
-<pre><code>    n = 10
+<pre><code>    n = 100
+    
     sum = 0
     counter = 1
     while counter &lt;= n:
-    sum = sum + counter
-    counter += 1
+        sum = sum + counter
+        counter += 1
+    
     print(&quot;1 到 %d 之和为: %d&quot; % (n,sum))
-
     &lt;!-- more --&gt;
     var = 1
     while var == 1 :  # 表达式永远为 true
@@ -98,11 +99,29 @@
     print (&quot;Good bye!&quot;)
 </code></pre>
 <!-- more -->
+<pre><code>    count = 0
+    while count &lt; 5:
+    print (count, &quot; 小于 5&quot;)
+    count = count + 1
+    else:
+    print (count, &quot; 大于或等于 5&quot;)
+</code></pre>
+<!-- more -->
 <pre><code>    flag = 1
     
     while (flag): print ('欢迎访问菜鸟教程!')
     
     print (&quot;Good bye!&quot;)
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;languages = [&quot;C&quot;, &quot;C++&quot;, &quot;Perl&quot;, &quot;Python&quot;] 
+    &gt;&gt;&gt; for x in languages:
+    ...     print (x)
+    ... 
+    C
+    C++
+    Perl
+    Python
 </code></pre>
 <!-- more -->
 <pre><code>    sites = [&quot;Baidu&quot;, &quot;Google&quot;,&quot;Runoob&quot;,&quot;Taobao&quot;]
@@ -114,9 +133,51 @@
     else:
         print(&quot;没有循环数据!&quot;)
     print(&quot;完成循环!&quot;)
-    &lt;!-- more --&gt;
-    for i in range(-10, -100, -30) :
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;for i in range(5):
+    ...     print(i)
+    ...
+    0
+    1
+    2
+    3
+    4
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;for i in range(5,9) :
         print(i)
+    
+        
+    5
+    6
+    7
+    8
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;for i in range(-10, -100, -30) :
+        print(i)
+    
+        
+    -10
+    -40
+    -70
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
+    &gt;&gt;&gt; for i in range(len(a)):
+    ...     print(i, a[i])
+    ... 
+    0 Google
+    1 Baidu
+    2 Runoob
+    3 Taobao
+    4 QQ
+</code></pre>
+<!-- more -->
+<pre><code>    &gt;&gt;&gt;list(range(5))
+    [0, 1, 2, 3, 4]
+    &gt;&gt;&gt;
 </code></pre>
 <!-- more -->
 <pre><code>    n = 5
@@ -126,26 +187,77 @@
             break
         print(n)
     print('循环结束。')
+
+    输出结果为：
+
+    4
+    3
+    循环结束。
 </code></pre>
 <!-- more -->
-<pre><code>    注意例题：
-    for i in 'Runoob':
-        if i  == 'o':
-            pass
-            print('执行 pass 块')
-        print('当前字母 :', i)
+<pre><code>    n = 5
+    while n &gt; 0:
+        n -= 1
+        if n == 2:
+            continue
+        print(n)
+    print('循环结束。')
 
-    print(&quot;Good bye!&quot;)
+    输出结果为：
 
-    for可以遍历字符串里面的每一个字符
+    4
+    3
+    1
+    0
+    循环结束。
 </code></pre>
+<!-- more -->
+<pre><code>    for letter in 'Runoob':     # 第一个实例
+    if letter == 'b':
+        break
+    print ('当前字母为 :', letter)
+    
+    var = 10                    # 第二个实例
+    while var &gt; 0:              
+    print ('当期变量值为 :', var)
+    var = var -1
+    if var == 5:
+        break
+    
+    print (&quot;Good bye!&quot;)
+
+    执行以上脚本输出结果为：
+
+    当前字母为 : R
+    当前字母为 : u
+    当前字母为 : n
+    当前字母为 : o
+    当前字母为 : o
+    当期变量值为 : 10
+    当期变量值为 : 9
+    当期变量值为 : 8
+    当期变量值为 : 7
+    当期变量值为 : 6
+    Good bye!
+</code></pre>
+<!-- more -->
+<pre><code>    for n in range(2, 10):
+        for x in range(2, n):
+            if n % x == 0:
+                print(n, '等于', x, '*', n//x)
+                break
+        else:
+            # 循环中没有找到元素
+            print(n, ' 是质数')
+</code></pre>
+<!-- more -->
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-27-21</span>
+          <span class="date">2-28-21</span>
           <i class="fa fa-tag"></i>
           
           <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
@@ -162,16 +274,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/T71wcY_8w/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/PMbiK0KUu/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/mifuOo9kG/" title="05.py列表">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/8suZR5x-H/" title=" 03.diary">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/H2LQYf8I1/" title=" 07.py集合">下一篇</a></li>
         
        </ul>
       </div>
