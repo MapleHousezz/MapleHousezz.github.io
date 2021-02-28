@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-02-27T09:10:43.622Z</updated>
+    <updated>2021-02-28T03:02:37.769Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://MapleHousezz.github.io/images/avatar.png</logo>
     <icon>https://MapleHousezz.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, study and learn</rights>
+    <entry>
+        <title type="html"><![CDATA[04.diary]]></title>
+        <id>https://MapleHousezz.github.io/-yv7JBdMJ/</id>
+        <link href="https://MapleHousezz.github.io/-yv7JBdMJ/">
+        </link>
+        <updated>2021-02-28T03:00:45.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[06.py元组，字典，集合]]></title>
         <id>https://MapleHousezz.github.io/4yJDFFJjd/</id>
@@ -76,12 +83,5 @@
         <link href="https://MapleHousezz.github.io/02diary/">
         </link>
         <updated>2021-02-26T02:32:35.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[02.py数据类型]]></title>
-        <id>https://MapleHousezz.github.io/02py-shu-ju-lei-xing/</id>
-        <link href="https://MapleHousezz.github.io/02py-shu-ju-lei-xing/">
-        </link>
-        <updated>2021-02-26T01:55:11.000Z</updated>
     </entry>
 </feed>
