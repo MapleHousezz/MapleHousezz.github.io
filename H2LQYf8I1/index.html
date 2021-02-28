@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>06.py元组，字典，集合 | study and learn</title>
+  <title>07.py集合 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,214 +77,10 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>06.py元组，字典，集合</a></h3>
+        <h3><a>07.py集合</a></h3>
        </div>
        <div class="post-content">
         <!-- more -->
-<p><strong>元组</strong></p>
-<!-- more -->
-<pre><code>    **Python 的元组与列表类似，不同之处在于元组的元素不能修改。
-
-    元组使用小括号 ( )，列表使用方括号 [ ]。
-
-    元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。**
-
-
-    &gt;&gt;&gt; tup1 = ('Google', 'Runoob', 1997, 2000)
-    &gt;&gt;&gt; tup2 = (1, 2, 3, 4, 5 )
-    &gt;&gt;&gt; tup3 = &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;   #  不需要括号也可以
-    &gt;&gt;&gt; type(tup3)
-    &lt;class 'tuple'&gt;
-
-    创建空元组
-
-    tup1 = ()
-</code></pre>
-<!-- more -->
-<pre><code>    元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用：
-
-    &gt;&gt;&gt; tup1 = (50)
-    &gt;&gt;&gt; type(tup1)     # 不加逗号，类型为整型
-    &lt;class 'int'&gt;
-
-    &gt;&gt;&gt; tup1 = (50,)
-    &gt;&gt;&gt; type(tup1)     # 加上逗号，类型为元组
-    &lt;class 'tuple'&gt;
-</code></pre>
-<!-- more -->
-<pre><code>    tup1 = ('Google', 'Runoob', 1997, 2000)
-    tup2 = (1, 2, 3, 4, 5, 6, 7 )
-    
-    print (&quot;tup1[0]: &quot;, tup1[0])
-    print (&quot;tup2[1:5]: &quot;, tup2[1:5])
-
-    以上实例输出结果：
-
-    tup1[0]:  Google
-    tup2[1:5]:  (2, 3, 4, 5)
-</code></pre>
-<!-- more -->
-<pre><code>    tup1 = (12, 34.56)
-    tup2 = ('abc', 'xyz')
-    以下修改元组元素操作是非法的。
-    tup1[0] = 100
-    
-    创建一个新的元组
-    tup3 = tup1 + tup2
-    print (tup3)
-
-    以上实例输出结果：
-
-    (12, 34.56, 'abc', 'xyz')
-</code></pre>
-<!-- more -->
-<pre><code>    tup = ('Google', 'Runoob', 1997, 2000)
-    
-    print (tup)
-    del tup
-    print (&quot;删除后的元组 tup : &quot;)
-    print (tup)
-
-    以上实例元组被删除后，输出变量会有异常信息，输出如下所示：
-
-    删除后的元组 tup : 
-    Traceback (most recent call last):
-    File &quot;test.py&quot;, line 8, in &lt;module&gt;
-        print (tup)
-    NameError: name 'tup' is not defined
-</code></pre>
-<!-- more -->
-<pre><code>    &gt;&gt;&gt; tup = ('Google', 'Runoob', 'Taobao', 'Wiki', 'Weibo','Weixin')
-    &gt;&gt;&gt; tup[1]
-    'Runoob'
-    &gt;&gt;&gt; tup[-2]
-    'Weibo'
-    &gt;&gt;&gt; tup[1:]
-    ('Runoob', 'Taobao', 'Wiki', 'Weibo', 'Weixin')
-    &gt;&gt;&gt; tup[1:4]
-    ('Runoob', 'Taobao', 'Wiki')
-</code></pre>
-<!-- more -->
-<pre><code>    &gt;&gt;&gt; tup = ('r', 'u', 'n', 'o', 'o', 'b')
-    &gt;&gt;&gt; tup[0] = 'g'     # 不支持修改元素
-    Traceback (most recent call last):
-    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-    TypeError: 'tuple' object does not support item assignment
-    &gt;&gt;&gt; id(tup)     # 查看内存地址
-    4440687904
-    &gt;&gt;&gt; tup = (1,2,3)
-    &gt;&gt;&gt; id(tup)
-    4441088800    # 内存地址不一样了
-</code></pre>
-<!-- more -->
-<p><strong>字典</strong></p>
-<!-- more -->
-<pre><code>    字典是另一种可变容器模型，且可存储任意类型对象。
-
-    字典的每个键值 key=&gt;value 对用冒号 : 分割，每个对之间用逗号(,)分割，整个字典包括在花括号 {} 中 ,格式如下所示： 
-    d = {key1 : value1, key2 : value2, key3 : value3 }
-</code></pre>
-<!-- more -->
-<pre><code>    键必须是唯一的，但值则不必。
-
-    值可以取任何数据类型，但键必须是不可变的，如字符串，数字。
-
-    一个简单的字典实例：
-
-    dict = {'name': 'runoob', 'likes': 123, 'url': 'www.runoob.com'}
-
-    也可如此创建字典：
-
-    dict1 = { 'abc': 456 }
-    dict2 = { 'abc': 123, 98.6: 37 }
-</code></pre>
-<!-- more -->
-<pre><code>    dict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
-    
-    print (&quot;dict['Name']: &quot;, dict['Name'])
-    print (&quot;dict['Age']: &quot;, dict['Age'])
-
-    以上实例输出结果：
-
-    dict['Name']:  Runoob
-    dict['Age']:  7
-</code></pre>
-<!-- more -->
-<pre><code>    如果用字典里没有的键访问数据，会输出错误如下：
-    dict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
-    
-    print (&quot;dict['Alice']: &quot;, dict['Alice'])
-
-    以上实例输出结果：
-
-    Traceback (most recent call last):
-    File &quot;test.py&quot;, line 5, in &lt;module&gt;
-        print (&quot;dict['Alice']: &quot;, dict['Alice'])
-    KeyError: 'Alice'
-</code></pre>
-<!-- more -->
-<pre><code>    向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例:
-    dict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
-    
-    dict['Age'] = 8               # 更新 Age
-    dict['School'] = &quot;菜鸟教程&quot;  # 添加信息
-    
-    
-    print (&quot;dict['Age']: &quot;, dict['Age'])
-    print (&quot;dict['School']: &quot;, dict['School'])
-    以上实例输出结果：
-
-    dict['Age']:  8
-    dict['School']:  菜鸟教程
-</code></pre>
-<!-- more -->
-<pre><code>    能删单一的元素也能清空字典，清空只需一项操作。
-
-    显示删除一个字典用del命令，如下实例：
-    dict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
-    
-    del dict['Name'] # 删除键 'Name'
-    dict.clear()     # 清空字典
-    del dict         # 删除字典
-    
-    print (&quot;dict['Age']: &quot;, dict['Age'])
-    print (&quot;dict['School']: &quot;, dict['School'])
-
-    但这会引发一个异常，因为用执行 del 操作后字典不再存在：
-
-    Traceback (most recent call last):
-    File &quot;test.py&quot;, line 9, in &lt;module&gt;
-        print (&quot;dict['Age']: &quot;, dict['Age'])
-    TypeError: 'type' object is not subscriptable
-</code></pre>
-<!-- more -->
-<pre><code>    字典值可以是任何的 python 对象，既可以是标准的对象，也可以是用户定义的，但键不行。
-
-    两个重要的点需要记住：
-
-    1）不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住，如下实例：
-    dict = {'Name': 'Runoob', 'Age': 7, 'Name': '小菜鸟'}
-    
-    print (&quot;dict['Name']: &quot;, dict['Name'])
-
-    以上实例输出结果：
-
-    dict['Name']:  小菜鸟
-    2）键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行，如下实例：
-    dict = {['Name']: 'Runoob', 'Age': 7}
-    
-    print (&quot;dict['Name']: &quot;, dict['Name'])
-
-    以上实例输出结果：
-
-    Traceback (most recent call last):
-    File &quot;test.py&quot;, line 3, in &lt;module&gt;
-        dict = {['Name']: 'Runoob', 'Age': 7}
-    TypeError: unhashable type: 'list'
-</code></pre>
-<!-- more -->
-<p><strong>集合</strong></p>
-<!-- more -->
 <pre><code>    集合（set）是一个无序的不重复元素序列。
 
     可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
@@ -320,20 +116,28 @@
     {'r', 'd', 'b', 'm', 'z', 'l'}
 </code></pre>
 <!-- more -->
-<pre><code>    类似列表推导式，同样集合支持集合推导式(Set comprehension):
-    &gt;&gt;&gt; a = {x for x in 'abracadabra' if x not in 'abc'}
+<pre><code>    &gt;&gt;&gt; a = {x for x in 'abracadabra' if x not in 'abc'}
     &gt;&gt;&gt; a
     {'r', 'd'}
 </code></pre>
 <!-- more -->
 <pre><code>    1、添加元素
+
+    语法格式如下：
+
     s.add( x )
+
     将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作。
     &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
     &gt;&gt;&gt; thisset.add(&quot;Facebook&quot;)
     &gt;&gt;&gt; print(thisset)
     {'Taobao', 'Facebook', 'Google', 'Runoob'}
+
     还有一个方法，也可以添加元素，且参数可以是列表，元组，字典等，语法格式如下：
+
+    s.update( x )
+
+    x 可以有多个，用逗号分开。
     &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
     &gt;&gt;&gt; thisset.update({1,3})
     &gt;&gt;&gt; print(thisset)
@@ -341,9 +145,13 @@
     &gt;&gt;&gt; thisset.update([1,4],[5,6])  
     &gt;&gt;&gt; print(thisset)
     {1, 3, 4, 5, 6, 'Google', 'Taobao', 'Runoob'}
+    &gt;&gt;&gt;
 </code></pre>
 <!-- more -->
 <pre><code>    2、移除元素
+
+    语法格式如下：
+
     s.remove( x )
 
     将元素 x 从集合 s 中移除，如果元素不存在，则会发生错误。
@@ -358,10 +166,11 @@
     此外还有一个方法也是移除集合中的元素，且如果元素不存在，不会发生错误。格式如下所示：
 
     s.discard( x )
-    &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
+     &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
     &gt;&gt;&gt; thisset.discard(&quot;Facebook&quot;)  # 不存在不会发生错误
     &gt;&gt;&gt; print(thisset)
     {'Taobao', 'Google', 'Runoob'}
+
     我们也可以设置随机删除集合中的一个元素，语法格式如下：
 
     s.pop() 
@@ -374,9 +183,13 @@
 
     $ python3 test.py 
     Runoob
+    多次执行测试结果都不一样。
+
+    set 集合的 pop 方法会对集合进行无序的排列，然后将这个无序排列集合的左面第一个元素进行删除。
 </code></pre>
 <!-- more -->
 <pre><code>    3、计算集合元素个数
+
     语法格式如下：
 
     len(s)
@@ -388,9 +201,11 @@
 </code></pre>
 <!-- more -->
 <pre><code>    4、清空集合
+
     语法格式如下：
 
     s.clear()
+
     清空集合 s。
     &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
     &gt;&gt;&gt; thisset.clear()
@@ -399,9 +214,11 @@
 </code></pre>
 <!-- more -->
 <pre><code>    5、判断元素是否在集合中存在
-    语法格式如下：
 
-    x in s
+    语法格式如下：
+</code></pre>
+<!-- more -->
+<pre><code>    x in s
 
     判断元素 x 是否在集合 s 中，存在返回 True，不存在返回 False。
     &gt;&gt;&gt; thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
@@ -411,15 +228,13 @@
     False
     &gt;&gt;&gt;
 </code></pre>
-<!-- more -->
-<!-- more -->
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-27-21</span>
+          <span class="date">2-28-21</span>
           <i class="fa fa-tag"></i>
           
           <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
@@ -436,16 +251,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/4yJDFFJjd/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/H2LQYf8I1/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/-yv7JBdMJ/" title="04.diary">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/mifuOo9kG/" title=" 05.py列表">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/-yv7JBdMJ/" title=" 04.diary">下一篇</a></li>
         
        </ul>
       </div>
