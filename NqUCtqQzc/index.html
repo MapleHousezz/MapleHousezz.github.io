@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>03.py选择结构 | study and learn</title>
+  <title>11.py 异常处理 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,44 +77,52 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>03.py选择结构</a></h3>
+        <h3><a>11.py 异常处理</a></h3>
        </div>
        <div class="post-content">
-        <!-- more -->
-<pre><code>    &quot;&quot;&quot;缩进是python的灵魂&quot;&quot;&quot;
-    money=int(input('取多少钱？'))
-    all=1999
-    af=all-money
-    if money&lt;=all:
-        print(&quot;取款金额%d&quot;%money,&quot;余额%d&quot;%af)
-    else:
-        print(&quot;当前余额不足，快去赚钱吧&quot;)
-    print(&quot;取款结束，请去取出卡片&quot;)
+        <pre><code>    while True:
+        try:
+            x = int(input(&quot;请输入一个数字: &quot;))
+            break
+        except ValueError:
+            print(&quot;您输入的不是数字，请再次尝试输入！&quot;)
 </code></pre>
-<!-- more -->
-<pre><code>    score=int(input(&quot;请输入分数&quot;))
-    if score&gt;=90 and score&lt;100:
-        print(&quot;A&quot;)
-    elif score&gt;=80 and score&lt;90:
-        print(&quot;B&quot;)
-    elif score&gt;=70 and score&lt;80:
-        print(&quot;C&quot;)
-    elif score&gt;=60 and score&lt;70:
-        print(&quot;D&quot;)
-    elif 0&lt;=score&lt;60:
-        print(&quot;E&quot;)
-    else:
-        print(&quot;输入有误，请重新输入&quot;)</code></pre>
+<p>try 语句按照如下方式工作；</p>
+<pre><code>首先，执行 try 子句（在关键字 try 和关键字 except 之间的语句）。
+
+如果没有异常发生，忽略 except 子句，try 子句执行后结束。
+
+如果在执行 try 子句的过程中发生了异常，那么 try 子句余下的部分将被忽略。如果异常的类型和 except 之后的名称相符，那么对应的 except 子句将被执行。
+
+如果一个异常没有与任何的 except 匹配，那么这个异常将会传递给上层的 try 中。
+</code></pre>
+<p>一个 try 语句可能包含多个except子句，分别来处理不同的特定的异常。最多只有一个分支会被执行。</p>
+<p>处理程序将只针对对应的 try 子句中的异常进行处理，而不是其他的 try 的处理程序中的异常。</p>
+<pre><code>    一个except子句可以同时处理多个异常，这些异常将被放在一个括号里成为一个元组，例如:
+    except (RuntimeError, TypeError, NameError):
+            pass
+
+    最后一个except子句可以忽略异常的名称，它将被当作通配符使用。你可以使用这种方法打印一个错误信息，然后再次把异常抛出。
+        import sys
+        try:
+        f = open('myfile.txt')
+        s = f.readline()
+        i = int(s.strip())
+        except OSError as err:
+        print(&quot;OS error: {0}&quot;.format(err))
+        except ValueError:
+        print(&quot;Could not convert data to an integer.&quot;)
+        except:
+        print(&quot;Unexpected error:&quot;, sys.exc_info()[0])
+        raise</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-26-21</span>
+          <span class="date">3-4-21</span>
           <i class="fa fa-tag"></i>
-          
-          <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
           
          </div>
         </div>
@@ -128,16 +136,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/-2Vre4_L5/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/NqUCtqQzc/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/4rtPCKjdK/" title="爬虫第1课：发送与读取请求">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/chang-yong-jian-suo-yu-fa/" title=" 常用检索语法">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/f6dRHx0Fr/" title=" 10.py File(文件) 方法">下一篇</a></li>
         
        </ul>
       </div>

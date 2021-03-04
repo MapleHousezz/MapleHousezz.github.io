@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-03-01T07:49:37.072Z</updated>
+    <updated>2021-03-04T10:12:27.897Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://MapleHousezz.github.io/images/avatar.png</logo>
     <icon>https://MapleHousezz.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, study and learn</rights>
+    <entry>
+        <title type="html"><![CDATA[11.py 异常处理]]></title>
+        <id>https://MapleHousezz.github.io/NqUCtqQzc/</id>
+        <link href="https://MapleHousezz.github.io/NqUCtqQzc/">
+        </link>
+        <updated>2021-03-04T10:07:31.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[10.py File(文件) 方法]]></title>
+        <id>https://MapleHousezz.github.io/f6dRHx0Fr/</id>
+        <link href="https://MapleHousezz.github.io/f6dRHx0Fr/">
+        </link>
+        <updated>2021-03-04T10:01:59.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[09.py 迭代器与生成器]]></title>
         <id>https://MapleHousezz.github.io/nNy471UHa/</id>
@@ -65,19 +79,5 @@
         <link href="https://MapleHousezz.github.io/T71wcY_8w/">
         </link>
         <updated>2021-02-27T06:12:11.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[03.diary]]></title>
-        <id>https://MapleHousezz.github.io/8suZR5x-H/</id>
-        <link href="https://MapleHousezz.github.io/8suZR5x-H/">
-        </link>
-        <updated>2021-02-27T06:10:39.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[爬虫第2课：内容搜索提取]]></title>
-        <id>https://MapleHousezz.github.io/FmJrajC56/</id>
-        <link href="https://MapleHousezz.github.io/FmJrajC56/">
-        </link>
-        <updated>2021-02-27T06:08:46.000Z</updated>
     </entry>
 </feed>
