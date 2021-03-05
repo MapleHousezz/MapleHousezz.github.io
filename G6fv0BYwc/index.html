@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>02.sh shell变量 | study and learn</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://MapleHousezz.github.io/images/avatar.png?v=1614928813650" style="width:127px;" />
+
+     <div class="description">
+      <p>每个人需要一点小小的梦想</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   <b>study and learn</b>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>02.sh shell变量</a></h3>
+       </div>
+       <div class="post-content">
+        <!-- more -->
+<h1 id="定义变量">定义变量</h1>
+<!-- more -->
+<p>定义变量时，变量名不加美元符号（$，PHP语言中变量需要），如：</p>
+<pre><code>    your_name=&quot;runoob.com&quot;
+</code></pre>
+<p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
+<pre><code>1.命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。
+2.中间不能有空格，可以使用下划线（_）。
+3.不能使用标点符号。
+4.不能使用bash里的关键字（可用help命令查看保留关键字）。
+</code></pre>
+<p>有效的 Shell 变量名示例如下：</p>
+<pre><code>    RUNOOB
+    LD_LIBRARY_PATH
+    _var
+    var2
+</code></pre>
+<p>无效的变量命名：</p>
+<pre><code>    ?var=123
+    user*name=runoob
+</code></pre>
+<p>除了显式地直接赋值，还可以用语句给变量赋值，如：</p>
+<pre><code>    for file in `ls /etc`
+    或
+    for file in $(ls /etc)
+</code></pre>
+<p>以上语句将 /etc 下目录的文件名循环出来。</p>
+<!-- more -->
+<h1 id="使用变量">使用变量</h1>
+<!-- more -->
+<p>使用一个定义过的变量，只要在变量名前面加美元符号即可，如：</p>
+<pre><code>    your_name=&quot;qinjx&quot;
+    echo $your_name
+    echo ${your_name}
+</code></pre>
+<p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
+<pre><code>    for skill in Ada Coffe Action Java; do
+        echo &quot;I am good at ${skill}Script&quot;
+    done
+</code></pre>
+<p>如果不给skill变量加花括号，写成echo &quot;I am good at <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>k</mi><mi>i</mi><mi>l</mi><mi>l</mi><mi>S</mi><mi>c</mi><mi>r</mi><mi>i</mi><mi>p</mi><mi>t</mi><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">，</mi><mi mathvariant="normal">解</mi><mi mathvariant="normal">释</mi><mi mathvariant="normal">器</mi><mi mathvariant="normal">就</mi><mi mathvariant="normal">会</mi><mi mathvariant="normal">把</mi></mrow><annotation encoding="application/x-tex">skillScript&quot;，解释器就会把</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span><span class="mord mathdefault">t</span><span class="mord">&quot;</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">解</span><span class="mord cjk_fallback">释</span><span class="mord cjk_fallback">器</span><span class="mord cjk_fallback">就</span><span class="mord cjk_fallback">会</span><span class="mord cjk_fallback">把</span></span></span></span>skillScript当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
+<p>推荐给所有变量加上花括号，这是个好的编程习惯。</p>
+<p>已定义的变量，可以被重新定义，如：</p>
+<pre><code>    your_name=&quot;tom&quot;
+    echo $your_name
+    your_name=&quot;alibaba&quot;
+    echo $your_name
+
+这样写是合法的，但注意，第二次赋值的时候不能写$your_name=&quot;alibaba&quot;使用变量的时候才加美元符（$）。 
+</code></pre>
+<!-- more -->
+<h1 id="只读变量">只读变量</h1>
+<!-- more -->
+<p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
+<p>下面的例子尝试更改只读变量，结果报错：</p>
+<pre><code>    #!/bin/bash
+    myUrl=&quot;https://www.google.com&quot;
+    readonly myUrl
+    myUrl=&quot;https://www.runoob.com&quot;
+</code></pre>
+<p>运行脚本，结果如下：</p>
+<pre><code>    /bin/sh: NAME: This variable is read only.
+</code></pre>
+<!-- more -->
+<h1 id="删除变量">删除变量</h1>
+<!-- more -->
+<p>使用 unset 命令可以删除变量。语法：</p>
+<pre><code>    unset variable_name
+</code></pre>
+<p>变量被删除后不能再次使用。unset 命令不能删除只读变量。</p>
+<p>实例</p>
+<pre><code>    #!/bin/sh
+    myUrl=&quot;https://www.runoob.com&quot;
+    unset myUrl
+    echo $myUrl
+</code></pre>
+<p>以上实例执行将没有任何输出。</p>
+<!-- more -->
+<h1 id="变量类型">变量类型</h1>
+<!-- more -->
+<p>运行shell时，会同时存在三种变量：</p>
+<pre><code>    1) 局部变量 局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。
+    2) 环境变量 所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。
+    3) shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行
+</code></pre>
+<!-- more -->
+<h1 id="以下是字符串实例">以下是字符串实例</h1>
+<!-- more -->
+<pre><code>    str='this is a string'
+
+    your_name='runoob'
+    str=&quot;Hello, I know you are \&quot;$your_name\&quot;! \n&quot;
+    echo -e $str
+
+    输出结果为：
+
+    Hello, I know you are &quot;runoob&quot;! 
+
+    your_name=&quot;runoob&quot;
+    # 使用双引号拼接
+    greeting=&quot;hello, &quot;$your_name&quot; !&quot;
+    greeting_1=&quot;hello, ${your_name} !&quot;
+    echo $greeting  $greeting_1
+    # 使用单引号拼接
+    greeting_2='hello, '$your_name' !'
+    greeting_3='hello, ${your_name} !'
+    echo $greeting_2  $greeting_3
+
+    输出结果为：
+
+    hello, runoob ! hello, runoob !
+    hello, runoob ! hello, ${your_name} !
+
+    string=&quot;abcd&quot;
+    echo ${#string} #输出 4
+
+    string=&quot;runoob is a great site&quot;
+    echo ${string:1:4} # 输出 unoo
+    查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：
+
+    string=&quot;runoob is a great site&quot;
+    echo `expr index &quot;$string&quot; io`  # 输出 4
+
+    注意： 以上脚本中 ` 是反引号，而不是单引号 '，不要看错了哦。
+</code></pre>
+<!-- more -->
+<!-- more -->
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">3-5-21</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://MapleHousezz.github.io/shell/" title="shell">shell </a>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/G6fv0BYwc/,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/75LiyrwYS/" title="03.sh shell数组">上一篇</a></li>
+         
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/3UxVcpH7s/" title=" 01.sh shell基础">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery.js"></script>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
