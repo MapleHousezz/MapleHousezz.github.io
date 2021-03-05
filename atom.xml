@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MapleHousezz.github.io</id>
     <title>study and learn</title>
-    <updated>2021-03-05T07:03:32.037Z</updated>
+    <updated>2021-03-05T07:03:45.898Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MapleHousezz.github.io"/>
     <link rel="self" href="https://MapleHousezz.github.io/atom.xml"/>
@@ -25,7 +25,7 @@
         <updated>2021-03-05T06:54:53.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[12.py 面向对象]]></title>
+        <title type="html"><![CDATA[12.py 类和对象]]></title>
         <id>https://MapleHousezz.github.io/HqW-CpQBK/</id>
         <link href="https://MapleHousezz.github.io/HqW-CpQBK/">
         </link>
