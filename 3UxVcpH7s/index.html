@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>爬虫第1课：发送与读取请求 | study and learn</title>
+  <title>01.sh shell基础 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,66 +77,40 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>爬虫第1课：发送与读取请求</a></h3>
+        <h3><a>01.sh shell基础</a></h3>
        </div>
        <div class="post-content">
         <!-- more -->
-<!-- more -->
-<pre><code>    import urllib.request,urllib.error 导入库
-    获取一个get请求
-    response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
-    print(response.read().decode(&quot;utf-8&quot;))#封装之后读取，再解码。
+<pre><code>    #!/bin/bash
+    echo &quot;Hello World !&quot;
+    #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。
+    echo 命令用于向窗口输出文本。 
 </code></pre>
 <!-- more -->
-<!-- more -->
-<pre><code>    获取一个post请求,需要提交数据表单
-    import urllib.parse
-    data = bytes(urllib.parse.urlencode({&quot;hello&quot;:&quot;world&quot;,&quot;1&quot;:&quot;2&quot;})encoding=&quot;utf-8&quot;)#这里是处理附加的表单信息
-    response2=urllib.request.urlopen(&quot;http://httpbin.org/post&quot;,data=data) 
-    print(response2.read().decode(&quot;utf-8&quot;))
+<p>1、作为可执行程序</p>
+<p>将上面的代码保存为 test.sh，并 cd 到相应目录：</p>
+<pre><code>    chmod +x ./test.sh  #使脚本具有执行权限
+    ./test.sh  #执行脚本
 </code></pre>
+<p>注意，一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</p>
 <!-- more -->
-<pre><code>    超时处理
-    try:
-            response=urllib.request.urlopen(&quot;http://httpbin.org/get&quot;,timeout=0.01)
-            print(response.read().decode(&quot;utf-8&quot;))
-    except urllib.error.URLError as e:
-            print(&quot;time out&quot;)
+<p>2、作为解释器参数</p>
+<p>这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：</p>
+<pre><code>    /bin/sh test.sh
+    /bin/php test.php
 </code></pre>
+<p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</p>
 <!-- more -->
-<pre><code>    response=urllib.request.urlopen(&quot;http://www.baidu.com&quot;)
-    print(response.status)#状态码，418是被发现了
-    print(response.getheaders())#响应头getheaders 要加s除非爬取单个
-    print(response.getheader(&quot;Server&quot;))#提取相应键值对
-</code></pre>
-<!-- more -->
-<pre><code>    url=&quot;http://httpbin.org/post&quot;
-    headers={
-                &quot;User-Agent&quot;: &quot;Mozilla/6.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0&quot;
-                }
-    data=bytes(urllib.parse.urlencode({&quot;name&quot;:&quot;eric&quot;}),encoding=&quot;utf-8&quot;)
-    req=urllib.request.Request(url=url,headers=headers,data=data,method=&quot;POST&quot;)
-    response=urllib.request.urlopen(req)
-    print(response.read().decode(&quot;utf-8&quot;))
-</code></pre>
-<!-- more -->
-<pre><code>    url=&quot;http://www.douban.com&quot;
-        headers={
-            &quot;User-Agent&quot;: &quot;Mozilla/6.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0&quot;
-        }
-    req=urllib.request.Request(url=url,headers=headers)
-    response=urllib.request.urlopen(req)
-    print(response.read().decode(&quot;utf-8&quot;))</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2-26-21</span>
+          <span class="date">3-5-21</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://MapleHousezz.github.io/python/" title="python">python </a>
+          <a class="tag" href="https://MapleHousezz.github.io/shell/" title="shell">shell </a>
           
          </div>
         </div>
@@ -150,16 +124,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/4rtPCKjdK/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/3UxVcpH7s/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/FmJrajC56/" title="爬虫第2课：内容搜索提取">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/-2Vre4_L5/" title=" 03.py选择结构">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/bUuH8m5R6/" title=" 07.diary">下一篇</a></li>
         
        </ul>
       </div>
