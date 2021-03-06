@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>04.sh shell运算符 | study and learn</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://MapleHousezz.github.io/images/avatar.png?v=1615038356321" style="width:127px;" />
+
+     <div class="description">
+      <p>每个人需要一点小小的梦想</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   <b>study and learn</b>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>04.sh shell运算符</a></h3>
+       </div>
+       <div class="post-content">
+        <!-- more -->
+<h1 id="算术运算符">算术运算符</h1>
+<!-- more -->
+<pre><code>    #!/bin/bash
+
+    val=`expr 2 + 2`
+    echo &quot;两数之和为 : $val&quot;
+
+    两数之和为 : 4
+</code></pre>
+<p>两点注意：</p>
+<pre><code>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。
+完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边。
+</code></pre>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    a=10
+    b=20
+
+    val=`expr $a + $b`
+    echo &quot;a + b : $val&quot;
+
+    val=`expr $a - $b`
+    echo &quot;a - b : $val&quot;
+
+    val=`expr $a \* $b`
+    echo &quot;a * b : $val&quot;
+
+    val=`expr $b / $a`
+    echo &quot;b / a : $val&quot;
+
+    val=`expr $b % $a`
+    echo &quot;b % a : $val&quot;
+
+    if [ $a == $b ]
+    then
+    echo &quot;a 等于 b&quot;
+    fi
+    if [ $a != $b ]
+    then
+    echo &quot;a 不等于 b&quot;
+    fi
+
+    执行脚本，输出结果如下所示：
+
+    a + b : 30
+    a - b : -10
+    a * b : 200
+    b / a : 2
+    b % a : 0
+    a 不等于 b
+</code></pre>
+<!-- more -->
+<pre><code>注意：
+
+    乘号(*)前边必须加反斜杠(\)才能实现乘法运算；
+    if...then...fi 是条件语句，后续将会讲解。
+    在 MAC 中 shell 的 expr 语法是：$((表达式))，此处表达式中的 &quot;*&quot; 不需要转义符号 &quot;\&quot; 。
+</code></pre>
+<!-- more -->
+<h1 id="关系运算符">关系运算符</h1>
+<!-- more -->
+<p>-eq 	检测两个数是否相等，相等返回 true。 	[ $a -eq $b ] 返回 false。<br>
+-ne 	检测两个数是否不相等，不相等返回 true。 	[ $a -ne $b ] 返回 true。<br>
+-gt 	检测左边的数是否大于右边的，如果是，则返回 true。 	[ $a -gt $b ] 返回 false。<br>
+-lt 	检测左边的数是否小于右边的，如果是，则返回 true。 	[ $a -lt $b ] 返回 true。<br>
+-ge 	检测左边的数是否大于等于右边的，如果是，则返回 true。 	[ $a -ge $b ] 返回 false。<br>
+-le 	检测左边的数是否小于等于右边的，如果是，则返回 true。 	[ $a -le $b ] 返回 true。</p>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    a=10
+    b=20
+
+    if [ $a -eq $b ]
+    then
+    echo &quot;$a -eq $b : a 等于 b&quot;
+    else
+    echo &quot;$a -eq $b: a 不等于 b&quot;
+    fi
+    if [ $a -ne $b ]
+    then
+    echo &quot;$a -ne $b: a 不等于 b&quot;
+    else
+    echo &quot;$a -ne $b : a 等于 b&quot;
+    fi
+    if [ $a -gt $b ]
+    then
+    echo &quot;$a -gt $b: a 大于 b&quot;
+    else
+    echo &quot;$a -gt $b: a 不大于 b&quot;
+    fi
+    if [ $a -lt $b ]
+    then
+    echo &quot;$a -lt $b: a 小于 b&quot;
+    else
+    echo &quot;$a -lt $b: a 不小于 b&quot;
+    fi
+    if [ $a -ge $b ]
+    then
+    echo &quot;$a -ge $b: a 大于或等于 b&quot;
+    else
+    echo &quot;$a -ge $b: a 小于 b&quot;
+    fi
+    if [ $a -le $b ]
+    then
+    echo &quot;$a -le $b: a 小于或等于 b&quot;
+    else
+    echo &quot;$a -le $b: a 大于 b&quot;
+    fi
+
+    执行脚本，输出结果如下所示：
+
+    10 -eq 20: a 不等于 b
+    10 -ne 20: a 不等于 b
+    10 -gt 20: a 不大于 b
+    10 -lt 20: a 小于 b
+    10 -ge 20: a 小于 b
+    10 -le 20: a 小于或等于 b
+</code></pre>
+<!-- more -->
+<h1 id="布尔运算符">布尔运算符</h1>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    a=10
+    b=20
+
+    if [ $a != $b ]
+    then
+    echo &quot;$a != $b : a 不等于 b&quot;
+    else
+    echo &quot;$a == $b: a 等于 b&quot;
+    fi
+    if [ $a -lt 100 -a $b -gt 15 ]
+    then
+    echo &quot;$a 小于 100 且 $b 大于 15 : 返回 true&quot;
+    else
+    echo &quot;$a 小于 100 且 $b 大于 15 : 返回 false&quot;
+    fi
+    if [ $a -lt 100 -o $b -gt 100 ]
+    then
+    echo &quot;$a 小于 100 或 $b 大于 100 : 返回 true&quot;
+    else
+    echo &quot;$a 小于 100 或 $b 大于 100 : 返回 false&quot;
+    fi
+    if [ $a -lt 5 -o $b -gt 100 ]
+    then
+    echo &quot;$a 小于 5 或 $b 大于 100 : 返回 true&quot;
+    else
+    echo &quot;$a 小于 5 或 $b 大于 100 : 返回 false&quot;
+    fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>    10 != 20 : a 不等于 b
+    10 小于 100 且 20 大于 15 : 返回 true
+    10 小于 100 或 20 大于 100 : 返回 true
+    10 小于 5 或 20 大于 100 : 返回 false
+</code></pre>
+ <!-- more -->
+<h1 id="逻辑运算符">逻辑运算符</h1>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    a=10
+    b=20
+
+    if [[ $a -lt 100 &amp;&amp; $b -gt 100 ]]
+    then
+    echo &quot;返回 true&quot;
+    else
+    echo &quot;返回 false&quot;
+    fi
+
+    if [[ $a -lt 100 || $b -gt 100 ]]
+    then
+    echo &quot;返回 true&quot;
+    else
+    echo &quot;返回 false&quot;
+    fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>    返回 false
+    返回 true
+</code></pre>
+<!-- more -->
+<h1 id="字符串运算符">字符串运算符</h1>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    a=&quot;abc&quot;
+    b=&quot;efg&quot;
+
+    if [ $a = $b ]
+    then
+    echo &quot;$a = $b : a 等于 b&quot;
+    else
+    echo &quot;$a = $b: a 不等于 b&quot;
+    fi
+    if [ $a != $b ]
+    then
+    echo &quot;$a != $b : a 不等于 b&quot;
+    else
+    echo &quot;$a != $b: a 等于 b&quot;
+    fi
+    if [ -z $a ]
+    then
+    echo &quot;-z $a : 字符串长度为 0&quot;
+    else
+    echo &quot;-z $a : 字符串长度不为 0&quot;
+    fi
+    if [ -n &quot;$a&quot; ]
+    then
+    echo &quot;-n $a : 字符串长度不为 0&quot;
+    else
+    echo &quot;-n $a : 字符串长度为 0&quot;
+    fi
+    if [ $a ]
+    then
+    echo &quot;$a : 字符串不为空&quot;
+    else
+    echo &quot;$a : 字符串为空&quot;
+    fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>    abc = efg: a 不等于 b
+    abc != efg : a 不等于 b
+    -z abc : 字符串长度不为 0
+    -n abc : 字符串长度不为 0
+    abc : 字符串不为空
+</code></pre>
+<!-- more -->
+<h1 id="文件测试运算符">文件测试运算符</h1>
+<!-- more -->
+<p>-b file 	检测文件是否是块设备文件，如果是，则返回 true。 	[ -b $file ] 返回 false。<br>
+-c file 	检测文件是否是字符设备文件，如果是，则返回 true。 	[ -c $file ] 返回 false。<br>
+-d file 	检测文件是否是目录，如果是，则返回 true。 	[ -d $file ] 返回 false。<br>
+-f file 	检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。 	[ -f $file ] 返回 true。<br>
+-g file 	检测文件是否设置了 SGID 位，如果是，则返回 true。 	[ -g $file ] 返回 false。<br>
+-k file 	检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。 	[ -k $file ] 返回 false。<br>
+-p file 	检测文件是否是有名管道，如果是，则返回 true。 	[ -p $file ] 返回 false。<br>
+-u file 	检测文件是否设置了 SUID 位，如果是，则返回 true。 	[ -u $file ] 返回 false。<br>
+-r file 	检测文件是否可读，如果是，则返回 true。 	[ -r $file ] 返回 true。<br>
+-w file 	检测文件是否可写，如果是，则返回 true。 	[ -w $file ] 返回 true。<br>
+-x file 	检测文件是否可执行，如果是，则返回 true。 	[ -x $file ] 返回 true。<br>
+-s file 	检测文件是否为空（文件大小是否大于0），不为空返回 true。 	[ -s $file ] 返回 true。<br>
+-e file 	检测文件（包括目录）是否存在，如果是，则返回 true。 	[ -e $file ] 返回 true。<br>
+其他检查符：</p>
+<pre><code>        -S: 判断某文件是否 socket。
+        -L: 检测文件是否存在并且是一个符号链接。 
+</code></pre>
+<!-- more -->
+<pre><code>    #!/bin/bash
+    # author:菜鸟教程
+    # url:www.runoob.com
+
+    file=&quot;/var/www/runoob/test.sh&quot;
+    if [ -r $file ]
+
+    then
+    echo &quot;文件可读&quot;
+    else
+    echo &quot;文件不可读&quot;
+    fi
+    if [ -w $file ]
+    then
+    echo &quot;文件可写&quot;
+    else
+    echo &quot;文件不可写&quot;
+    fi
+    if [ -x $file ]
+    then
+    echo &quot;文件可执行&quot;
+    else
+    echo &quot;文件不可执行&quot;
+    fi
+    if [ -f $file ]
+    then
+    echo &quot;文件为普通文件&quot;
+    else
+    echo &quot;文件为特殊文件&quot;
+    fi
+    if [ -d $file ]
+    then
+    echo &quot;文件是个目录&quot;
+    else
+    echo &quot;文件不是个目录&quot;
+    fi
+    if [ -s $file ]
+    then
+    echo &quot;文件不为空&quot;
+    else
+    echo &quot;文件为空&quot;
+    fi
+    if [ -e $file ]
+    then
+    echo &quot;文件存在&quot;
+    else
+    echo &quot;文件不存在&quot;
+    fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>    文件可读
+    文件可写
+    文件可执行
+    文件为普通文件
+    文件不是个目录
+    文件不为空
+    文件存在
+</code></pre>
+<!-- more -->
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">3-6-21</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://MapleHousezz.github.io/shell/" title="shell">shell </a>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/HkL0tfhPp/,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/ycy3OBs8M/" title=" 08.diary">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery.js"></script>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://MapleHousezz.github.io/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
