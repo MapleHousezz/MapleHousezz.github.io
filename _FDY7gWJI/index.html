@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>06.diary | study and learn</title>
+  <title>05.shell echo命令 | study and learn</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://MapleHousezz.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,20 +77,94 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>06.diary</a></h3>
+        <h3><a>05.shell echo命令</a></h3>
        </div>
        <div class="post-content">
-        <p>回校第一天，好好学习吧。</p>
+        <!-- more -->
+<h1 id="1显示普通字符串">1.显示普通字符串:</h1>
+<pre><code>    echo &quot;It is a test&quot;
+
+    这里的双引号完全可以省略，以下命令与上面实例效果一致：
+
+    echo It is a test
+</code></pre>
+<!-- more -->
+<h1 id="2显示转义字符">2.显示转义字符</h1>
+<pre><code>    echo &quot;\&quot;It is a test\&quot;&quot;
+
+    结果将是:
+
+    &quot;It is a test&quot;
+    同样，双引号也可以省略
+</code></pre>
+<!-- more -->
+<h1 id="3显示变量">3.显示变量</h1>
+<pre><code>    read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量
+
+    #!/bin/sh
+    read name 
+    echo &quot;$name It is a test&quot;
+
+    以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:
+
+    [root@www ~]# sh test.sh
+    OK                     #标准输入
+    OK It is a test        #输出
+</code></pre>
+<!-- more -->
+<h1 id="4显示换行">4.显示换行</h1>
+<pre><code>    echo -e &quot;OK! \n&quot; # -e 开启转义
+    echo &quot;It is a test&quot;
+
+    输出结果：
+
+    OK!
+
+    It is a test
+</code></pre>
+<!-- more -->
+<h1 id="5显示不换行">5.显示不换行</h1>
+<pre><code>    #!/bin/sh
+    echo -e &quot;OK! \c&quot; # -e 开启转义 \c 不换行
+    echo &quot;It is a test&quot;
+
+    输出结果：
+
+    OK! It is a test
+</code></pre>
+<!-- more -->
+<h1 id="6显示结果定向至文件">6.显示结果定向至文件</h1>
+<pre><code>    echo &quot;It is a test&quot; &gt; myfile
+</code></pre>
+<!-- more -->
+<h1 id="7原样输出字符串不进行转义或取变量用单引号">7.原样输出字符串，不进行转义或取变量(用单引号)</h1>
+<pre><code>    echo '$name\&quot;'
+
+    输出结果：
+
+    $name\&quot;
+</code></pre>
+<!-- more -->
+<h1 id="8显示命令执行结果">8.显示命令执行结果</h1>
+<pre><code>    echo `date`
+
+    注意： 这里使用的是反引号 `, 而不是单引号 '。
+
+    结果将显示当前日期
+
+    Thu Jul 24 10:08:46 CST 2014
+</code></pre>
+<!-- more -->
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">3-4-21</span>
+          <span class="date">3-15-21</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://MapleHousezz.github.io/diary/" title="diary">diary </a>
+          <a class="tag" href="https://MapleHousezz.github.io/shell/" title="shell">shell </a>
           
          </div>
         </div>
@@ -104,16 +178,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/CWz403guf/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://MapleHousezz.github.io/_FDY7gWJI/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/HqW-CpQBK/" title="12.py 类和对象">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/NqUCtqQzc/" title=" 11.py 异常处理">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://MapleHousezz.github.io/fPJIMSNqK/" title=" 09.diary">下一篇</a></li>
         
        </ul>
       </div>
